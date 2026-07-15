@@ -15,6 +15,7 @@ Fila *ultimo = NULL;
 void listarFila()
 {
     ultimo = fila;
+    int i = 1;
     if (fila == NULL)
     {
         printf("fila esta vazia.\n");
@@ -22,7 +23,7 @@ void listarFila()
     }
     do
     {
-        printf("dado: %d \n", ultimo->dado);
+        printf("%d - elemento: %d \n", i++, ultimo->dado);
         ultimo = ultimo->next;
     } while (ultimo != NULL);
     printf("fim da fila.\n");
