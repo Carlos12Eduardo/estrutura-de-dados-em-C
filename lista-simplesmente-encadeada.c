@@ -102,16 +102,6 @@ void menu()
 }
 int main()
 {
-    //	adicionarElementoNaFila(1);
-    //	adicionarElementoNaFila(2);
-    //	adicionarElementoNaFila(3);
-    //	adicionarElementoNaFila(4);
-    //	adicionarElementoNaFila(5);
-    //	adicionarElementoNaFila(6);
-    //	listarFila();
-    //	removerElementoDaFila();
-    //	removerElementoDaFila();
-    //	listarFila();
     menu();
     system("pause");
     return 0;
