@@ -77,7 +77,7 @@ void menu()
         printf("1- adicionar elemento\n");
         printf("2- remover elemento\n");
         printf("3- listar elementos da fila\n");
-        printf("0-sair\n");
+        printf("0- sair\n");
         printf("escolha uma opcao: ");
         scanf("%d", &escolha);
         switch (escolha)
@@ -93,12 +93,13 @@ void menu()
             break;
         case 3:
             listarFila();
-            system("pause");
             break;
         default:
             printf("opcao invalida! tente outra: ");
         }
+        system("pause");
         system("cls");
+
     } while (escolha != 0);
 }
 int main()
