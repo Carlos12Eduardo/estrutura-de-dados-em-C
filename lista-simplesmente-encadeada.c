@@ -79,7 +79,6 @@ void menu()
         printf("0-sair\n");
         printf("escolha uma opcao: ");
         scanf("%d", &escolha);
-        system("cls");
         switch (escolha)
         {
 
@@ -93,10 +92,12 @@ void menu()
             break;
         case 3:
             listarFila();
+            system("pause");
             break;
         default:
             printf("opcao invalida! tente outra: ");
         }
+        system("cls");
     } while (escolha != 0);
 }
 int main()
