@@ -7,11 +7,22 @@ typedef struct SFila{
 	struct SFila *next;
 }Fila;
 
-Fila *novo = NULL;
 Fila *fila = NULL;
 Fila *inicio = NULL;
 Fila *ultimo = NULL;
 Fila *penultimo = NULL;
+
+Fila * novoElemento(int informacao){
+    Fila *novo = (Fila*) malloc(sizeof(Fila));
+	if(!novo){
+		printf("memoria insuficiente.\n");
+		return NULL;
+	}
+	novo->dado = informacao;
+	novo->back = NULL;
+    novo->next = NULL;
+    return novo;
+}
 
 void mostrarFila(){
 	ultimo = fila;
