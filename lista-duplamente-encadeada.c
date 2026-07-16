@@ -116,18 +116,19 @@ void adicionarElementoNoInicio(Fila **inicioDaFila, int informacao)
     printf("elemento adicionado.\n");
 }
 
-Fila *removerElementoNoInicio()
+Fila *removerElementoNoInicio(Fila **inicioDaFila)
 {
-    inicio = fila;
+    Fila *inicio = *inicioDaFila;
     Fila *elementoRemovido;
-    if (fila == NULL)
+    if (*inicioDaFila == NULL)
     {
         printf("Sem elementos para remover no inicio.\n");
         return NULL;
     }
     else
     {
-        fila = fila->next;
+        *inicioDaFila = (*inicioDaFila)->next;
+        (*inicioDaFila)->back = NULL;
         elementoRemovido = (Fila *)malloc(sizeof(Fila));
         *elementoRemovido = *inicio;
         free(inicio);
