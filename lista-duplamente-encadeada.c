@@ -95,7 +95,7 @@ void adicionarElementoNoMeio(Fila *inicioDaFila, Fila *fimDaFila, int informacao
     printf("valor nao localizado.\n");
 }
 
-void adicionarElementoNoInicio(Fila *inicioDaFila, int informacao)
+void adicionarElementoNoInicio(Fila **inicioDaFila, int informacao)
 {
     Fila *novo = novoElemento(informacao);
     if (!novo)
@@ -103,14 +103,14 @@ void adicionarElementoNoInicio(Fila *inicioDaFila, int informacao)
         printf("memoria insuficiente.\n");
         return;
     }
-    if (inicioDaFila == NULL)
+    if (*inicioDaFila == NULL)
     {
-        inicioDaFila = novo;
+        *inicioDaFila = novo;
     }
     else
     {
-        novo->next = inicioDaFila;
-        inicioDaFila = novo;
+        novo->next = *inicioDaFila;
+        *inicioDaFila = novo;
     }
     printf("elemento adicionado.\n");
 }
