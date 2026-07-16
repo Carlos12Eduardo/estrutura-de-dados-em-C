@@ -24,18 +24,20 @@ Fila * novoElemento(int informacao){
     return novo;
 }
 
-void mostrarFila(){
-	ultimo = fila;
-	if(fila == NULL){
+void mostrarFila(Fila *inicioDaFila){
+    Fila *ultimo = inicioDaFila;
+    int i = 1;
+	if(inicioDaFila == NULL){
 		printf("fila esta vazia.\n");
 		return;
 	}
 	do{
-		printf("dado: %d \n",ultimo->dado);
+		printf("%d - elemento: %d \n", i++, ultimo->dado);
 		ultimo = ultimo->next;
 	}while(ultimo != NULL);
 	printf("fim da fila.\n");
 }
+
 void adicionarElementoNoFim(Fila *fimDaFila ,int informacao){
 	Fila *novo = novoElemento(informacao);
 	if(!novo){
