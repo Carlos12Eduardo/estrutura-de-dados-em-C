@@ -178,7 +178,7 @@ int main()
     // adicionarElementoNoFim(&inicioDaFila, &fimDaFila, 1);
     // adicionarElementoNoFim(&inicioDaFila, &fimDaFila, 2);
     // adicionarElementoNoFim(&inicioDaFila, &fimDaFila, 3);
-    mostrarFila(inicioDaFila);
+    mostrarFila(&inicioDaFila);
     adicionarElementoNoInicio(&inicioDaFila, 20);
     adicionarElementoNoMeio(&inicioDaFila, &fimDaFila, 1111, 5);
     adicionarElementoNoMeio(&inicioDaFila, &fimDaFila, 2222, 9);
@@ -189,7 +189,7 @@ int main()
     // {
     //     printf("elemento removido\n");
     // }
-    mostrarFila(inicioDaFila);
+    mostrarFila(&inicioDaFila);
     system("pause");
     return 0;
 }
