@@ -44,7 +44,7 @@ void mostrarFila(Fila *inicioDaFila)
     printf("fim da fila.\n");
 }
 
-void adicionarElementoNoFim(Fila *fimDaFila, int informacao)
+void adicionarElementoNoFim(Fila *inicioDaFila, Fila *fimDaFila, int informacao)
 {
     Fila *novo = novoElemento(informacao);
     if (!novo)
@@ -52,8 +52,16 @@ void adicionarElementoNoFim(Fila *fimDaFila, int informacao)
         printf("memoria insuficiente.\n");
         return;
     }
-    fimDaFila->next = novo;
+    if (inicioDaFila == NULL)
+    {
+        inicioDaFila = fimDaFila = novo;
+        return;
+    }
+    
     novo->back = fimDaFila;
+    novo->next = NULL;
+    fimDaFila->next = novo;
+    fimDaFila = novo;
     printf("elemento adicionado.\n");
 }
 
@@ -71,7 +79,7 @@ void adicionarElementoNoMeio(Fila *inicioDaFila, Fila *fimDaFila, int informacao
         if (procurado->dado == localizar)
         {
             if(procurado->next == NULL){
-                adicionarElementoNoFim(fimDaFila, informacao);
+                adicionarElementoNoFim(inicioDaFila, fimDaFila, informacao);
                 return;
             }
             novo->next = procurado->next;
@@ -158,22 +166,25 @@ Fila *removerElementoNoFim()
 
 int main()
 {
+    Fila * inicioDaFila = NULL; 
+    Fila * fimDaFila = NULL; 
+
     int i = 0;
     for (i = 0; i < 10; i++)
     {
-        adicionarElementoNoFim(i);
+        adicionarElementoNoFim(inicioDaFila, fimDaFila, i);
     }
-    mostrarFila();
-    adicionarElementoNoInicio(20);
-    adicionarElementoNoMeio(11111, 9);
-    adicionarElementoNoFim(123);
-    adicionarElementoNoFim(124);
-    mostrarFila();
-    while (removerElementoNoFim())
-    {
-        printf("elemento removido\n");
-    }
-    mostrarFila();
+    mostrarFila(inicioDaFila);
+    // adicionarElementoNoInicio(inicioDaFila, 20);
+    // adicionarElementoNoMeio(inicioDaFila,fimDaFila, 1111, 9);
+    // adicionarElementoNoFim(fimDaFila, 123);
+    // adicionarElementoNoFim(fimDaFila, 124);
+    // mostrarFila(inicioDaFila);
+    // while (removerElementoNoFim())
+    // {
+    //     printf("elemento removido\n");
+    // }
+    // mostrarFila();
     system("pause");
     return 0;
 }
