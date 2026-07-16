@@ -167,9 +167,6 @@ int main()
     {
         adicionarElementoNoFim(&inicioDaFila, &fimDaFila, i);
     }
-    // adicionarElementoNoFim(&inicioDaFila, &fimDaFila, 1);
-    // adicionarElementoNoFim(&inicioDaFila, &fimDaFila, 2);
-    // adicionarElementoNoFim(&inicioDaFila, &fimDaFila, 3);
     mostrarFila(&inicioDaFila);
     adicionarElementoNoInicio(&inicioDaFila, 20);
     adicionarElementoNoMeio(&inicioDaFila, &fimDaFila, 1111, 5);
@@ -183,6 +180,9 @@ int main()
     // {
     //     printf("elemento removido\n");
     // }
+    mostrarFila(&inicioDaFila);
+    removerElementoNoFim(&fimDaFila);
+    removerElementoNoFim(&fimDaFila);
     mostrarFila(&inicioDaFila);
     system("pause");
     return 0;
