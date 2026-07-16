@@ -179,7 +179,7 @@ int main()
     // adicionarElementoNoFim(&inicioDaFila, &fimDaFila, 3);
     mostrarFila(inicioDaFila);
     adicionarElementoNoInicio(&inicioDaFila, 20);
-    // adicionarElementoNoMeio(inicioDaFila,fimDaFila, 1111, 9);
+    adicionarElementoNoMeio(&inicioDaFila, &fimDaFila, 1111, 5);
     // adicionarElementoNoFim(fimDaFila, 123);
     // adicionarElementoNoFim(fimDaFila, 124);
     // mostrarFila(inicioDaFila);
