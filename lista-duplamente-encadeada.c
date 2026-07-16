@@ -8,11 +8,6 @@ typedef struct SFila
     struct SFila *next;
 } Fila;
 
-Fila *fila = NULL;
-Fila *inicio = NULL;
-Fila *ultimo = NULL;
-Fila *penultimo = NULL;
-
 Fila *novoElemento(int informacao)
 {
     Fila *novo = (Fila *)malloc(sizeof(Fila));
@@ -152,7 +147,6 @@ Fila *removerElementoNoFim(Fila **fimDaFila)
         (*fimDaFila)->next = NULL;
         *elementoRemovido = *ultimo;
         free(ultimo);
-        penultimo->next = NULL;
         return elementoRemovido;
     }
 }
