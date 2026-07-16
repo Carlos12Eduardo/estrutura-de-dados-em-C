@@ -36,26 +36,17 @@ void mostrarFila(){
 	}while(ultimo != NULL);
 	printf("fim da fila.\n");
 }
-void adicionarElementoNoFim(int informacao){
-	ultimo = fila;
-	novo = (Fila*) malloc(sizeof(Fila));
+void adicionarElementoNoFim(Fila *fimDaFila ,int informacao){
+	Fila *novo = novoElemento(informacao);
 	if(!novo){
 		printf("memoria insuficiente.\n");
 		return;
 	}
-	novo->dado = informacao;
-	novo->next = NULL;
-	if(fila == NULL){
-		fila = novo;	
-	}
-	else{
-		while(ultimo->next != NULL){
-			ultimo = ultimo->next;
-		}
-		ultimo->next = novo;
-	}
+    fimDaFila->next = novo;
+    novo->back = fimDaFila;
 	printf("elemento adicionado.\n");
 }
+
 void adicionarElementoNoMeio(int informacao, int localizar){
 	Fila *procurado = fila;
 	novo = (Fila*) malloc(sizeof(Fila));
