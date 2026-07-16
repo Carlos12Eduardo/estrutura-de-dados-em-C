@@ -183,6 +183,8 @@ int main()
     adicionarElementoNoInicio(&inicioDaFila, 20);
     adicionarElementoNoMeio(&inicioDaFila, &fimDaFila, 1111, 5);
     adicionarElementoNoMeio(&inicioDaFila, &fimDaFila, 2222, 9);
+    removerElementoNoInicio(&inicioDaFila);
+    removerElementoNoInicio(&inicioDaFila);
     // adicionarElementoNoFim(fimDaFila, 123);
     // adicionarElementoNoFim(fimDaFila, 124);
     // mostrarFila(inicioDaFila);
