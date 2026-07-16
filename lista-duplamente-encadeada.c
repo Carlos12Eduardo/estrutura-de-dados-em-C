@@ -58,7 +58,7 @@ void adicionarElementoNoFim(Fila **inicioDaFila, Fila **fimDaFila, int informaca
         printf("primeiro elemento adicionado");
         return;
     }
-    
+
     (*fimDaFila)->next = novo;
     novo->back = *fimDaFila;
     *fimDaFila = novo;
@@ -78,7 +78,8 @@ void adicionarElementoNoMeio(Fila **inicioDaFila, Fila **fimDaFila, int informac
     {
         if (procurado->dado == localizar)
         {
-            if(procurado->next == NULL){
+            if (procurado->next == NULL)
+            {
                 adicionarElementoNoFim(inicioDaFila, fimDaFila, informacao);
                 return;
             }
@@ -166,8 +167,8 @@ Fila *removerElementoNoFim()
 
 int main()
 {
-    Fila * inicioDaFila = NULL; 
-    Fila * fimDaFila = NULL; 
+    Fila *inicioDaFila = NULL;
+    Fila *fimDaFila = NULL;
     // inicioDaFila = novoElemento(20);
     int i = 0;
     for (i = 0; i < 10; i++)
@@ -180,6 +181,7 @@ int main()
     mostrarFila(inicioDaFila);
     adicionarElementoNoInicio(&inicioDaFila, 20);
     adicionarElementoNoMeio(&inicioDaFila, &fimDaFila, 1111, 5);
+    adicionarElementoNoMeio(&inicioDaFila, &fimDaFila, 2222, 9);
     // adicionarElementoNoFim(fimDaFila, 123);
     // adicionarElementoNoFim(fimDaFila, 124);
     // mostrarFila(inicioDaFila);
@@ -187,7 +189,7 @@ int main()
     // {
     //     printf("elemento removido\n");
     // }
-    mostrarFila(inicioDaFila);  
+    mostrarFila(inicioDaFila);
     system("pause");
     return 0;
 }
