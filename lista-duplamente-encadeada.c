@@ -44,7 +44,7 @@ void mostrarFila(Fila *inicioDaFila)
     printf("fim da fila.\n");
 }
 
-void adicionarElementoNoFim(Fila *inicioDaFila, Fila *fimDaFila, int informacao)
+void adicionarElementoNoFim(Fila **inicioDaFila, Fila **fimDaFila, int informacao)
 {
     Fila *novo = novoElemento(informacao);
     if (!novo)
@@ -52,16 +52,16 @@ void adicionarElementoNoFim(Fila *inicioDaFila, Fila *fimDaFila, int informacao)
         printf("memoria insuficiente.\n");
         return;
     }
-    if (inicioDaFila == NULL)
+    if (*inicioDaFila == NULL)
     {
-        inicioDaFila = fimDaFila = novo;
+        *inicioDaFila = *fimDaFila = novo;
+        printf("primeiro elemento adicionado");
         return;
     }
     
-    novo->back = fimDaFila;
-    novo->next = NULL;
-    fimDaFila->next = novo;
-    fimDaFila = novo;
+    (*fimDaFila)->next = novo;
+    novo->back = *fimDaFila;
+    *fimDaFila = novo;
     printf("elemento adicionado.\n");
 }
 
@@ -168,12 +168,15 @@ int main()
 {
     Fila * inicioDaFila = NULL; 
     Fila * fimDaFila = NULL; 
-
+    // inicioDaFila = novoElemento(20);
     int i = 0;
     for (i = 0; i < 10; i++)
     {
-        adicionarElementoNoFim(inicioDaFila, fimDaFila, i);
+        adicionarElementoNoFim(&inicioDaFila, &fimDaFila, i);
     }
+    // adicionarElementoNoFim(&inicioDaFila, &fimDaFila, 1);
+    // adicionarElementoNoFim(&inicioDaFila, &fimDaFila, 2);
+    // adicionarElementoNoFim(&inicioDaFila, &fimDaFila, 3);
     mostrarFila(inicioDaFila);
     // adicionarElementoNoInicio(inicioDaFila, 20);
     // adicionarElementoNoMeio(inicioDaFila,fimDaFila, 1111, 9);
