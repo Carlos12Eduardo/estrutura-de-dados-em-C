@@ -27,11 +27,11 @@ Fila *novoElemento(int informacao)
     return novo;
 }
 
-void mostrarFila(Fila *inicioDaFila)
+void mostrarFila(Fila **inicioDaFila)
 {
-    Fila *ultimo = inicioDaFila;
+    Fila *ultimo = *inicioDaFila;
     int i = 1;
-    if (inicioDaFila == NULL)
+    if (*inicioDaFila == NULL)
     {
         printf("fila esta vazia.\n");
         return;
