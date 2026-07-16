@@ -65,9 +65,9 @@ void adicionarElementoNoFim(Fila **inicioDaFila, Fila **fimDaFila, int informaca
     printf("elemento adicionado.\n");
 }
 
-void adicionarElementoNoMeio(Fila *inicioDaFila, Fila *fimDaFila, int informacao, int localizar)
+void adicionarElementoNoMeio(Fila **inicioDaFila, Fila **fimDaFila, int informacao, int localizar)
 {
-    Fila *procurado = inicioDaFila;
+    Fila *procurado = *inicioDaFila;
     Fila *novo = novoElemento(informacao);
     if (!novo)
     {
