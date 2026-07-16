@@ -135,10 +135,12 @@ Fila *removerElementoNoInicio(Fila **inicioDaFila)
         return elementoRemovido;
     }
 }
-Fila *removerElementoNoFim()
+
+Fila *removerElementoNoFim(Fila **fimDaFila)
 {
+    Fila *ultimo = *fimDaFila;
     Fila *elementoRemovido = NULL;
-    if (fila == NULL)
+    if (*fimDaFila == NULL)
     {
         printf("sem elementos para remover no fim!\n");
         return NULL;
@@ -146,19 +148,8 @@ Fila *removerElementoNoFim()
     else
     {
         elementoRemovido = (Fila *)malloc(sizeof(Fila));
-        ultimo = fila;
-        if (ultimo->next == NULL)
-        {
-            *elementoRemovido = *ultimo;
-            free(ultimo);
-            fila = NULL;
-            return elementoRemovido;
-        }
-        while (ultimo->next != NULL)
-        {
-            penultimo = ultimo;
-            ultimo = ultimo->next;
-        }
+        *fimDaFila = (*fimDaFila)->back;
+        (*fimDaFila)->next = NULL;
         *elementoRemovido = *ultimo;
         free(ultimo);
         penultimo->next = NULL;
