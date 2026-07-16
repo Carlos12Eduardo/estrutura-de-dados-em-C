@@ -69,21 +69,18 @@ void adicionarElementoNoMeio(int informacao, int localizar){
 	}
 	printf("valor nao localizado.\n");
 }
-void adicionarElementoNoInicio(int informacao){
-	inicio = fila;
-	novo = (Fila*) malloc(sizeof(Fila));
+void adicionarElementoNoInicio(Fila *inicioDaFila, int informacao){
+	Fila *novo = novoElemento(informacao);
 	if(!novo){
 		printf("memoria insuficiente.\n");
 		return;
 	}
-	novo->dado = informacao;
-	novo->next = NULL;
-	if(fila == NULL){
-		fila = novo;	
+	if(inicioDaFila == NULL){
+		inicioDaFila = novo;	
 	}
 	else{
-		novo->next = inicio;
-		fila = novo;
+		novo->next = inicioDaFila;
+		inicioDaFila = novo;
 	}
 	printf("elemento adicionado.\n");
 }
