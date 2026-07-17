@@ -127,7 +127,7 @@ void adicionarElementoNoMeio(Fila **inicioDaFila, Fila **fimDaFila, int informac
     printf("valor nao localizado.\n");
 }
 
-void adicionarElementoNoInicio(Fila **inicioDaFila, Fila **fimDaFila,int informacao)
+void adicionarElementoNoInicio(Fila **inicioDaFila, Fila **fimDaFila, int informacao)
 {
     Fila *novo = novoElemento(informacao);
     if (!novo)
@@ -148,7 +148,7 @@ void adicionarElementoNoInicio(Fila **inicioDaFila, Fila **fimDaFila,int informa
     printf("elemento adicionado.\n");
 }
 
-Fila *removerElementoNoInicio(Fila **inicioDaFila)
+Fila *removerElementoNoInicio(Fila **inicioDaFila, Fila **fimDaFila)
 {
     Fila *inicio = *inicioDaFila;
     Fila *elementoRemovido;
@@ -159,8 +159,15 @@ Fila *removerElementoNoInicio(Fila **inicioDaFila)
     }
     else
     {
-        *inicioDaFila = (*inicioDaFila)->next;
-        (*inicioDaFila)->back = NULL;
+        if (*inicioDaFila == *fimDaFila)
+        {
+            *inicioDaFila = *fimDaFila = NULL;
+        }
+        else
+        {
+            *inicioDaFila = (*inicioDaFila)->next;
+            (*inicioDaFila)->back = NULL;
+        }
         elementoRemovido = (Fila *)malloc(sizeof(Fila));
         *elementoRemovido = *inicio;
         free(inicio);
@@ -197,6 +204,13 @@ int main()
     adicionarElementoNoInicio(&inicioDaFila, &fimDaFila, 1);
     mostrarFila(&inicioDaFila, &fimDaFila, "LR");
     mostrarFila(&inicioDaFila, &fimDaFila, "RL");
+    while (removerElementoNoInicio(&inicioDaFila, &fimDaFila))
+    {
+        printf("elemento removido.\n");
+    }
+    printf("inicioDaFila: %p \n", inicioDaFila);
+    printf("fimDaFila: %p \n", fimDaFila);
+
     system("pause");
     return 0;
 }
