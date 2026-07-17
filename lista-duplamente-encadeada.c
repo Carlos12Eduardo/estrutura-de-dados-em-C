@@ -175,7 +175,7 @@ Fila *removerElementoNoInicio(Fila **inicioDaFila, Fila **fimDaFila)
     }
 }
 
-Fila *removerElementoNoFim(Fila **fimDaFila)
+Fila *removerElementoNoFim(Fila **inicioDaFila, Fila **fimDaFila)
 {
     Fila *ultimo = *fimDaFila;
     Fila *elementoRemovido = NULL;
@@ -186,9 +186,15 @@ Fila *removerElementoNoFim(Fila **fimDaFila)
     }
     else
     {
+        if (*inicioDaFila == *fimDaFila)
+        {
+            *inicioDaFila = *fimDaFila = NULL;
+        }
+        else{
+            *fimDaFila = (*fimDaFila)->back;
+            (*fimDaFila)->next = NULL;
+        }
         elementoRemovido = (Fila *)malloc(sizeof(Fila));
-        *fimDaFila = (*fimDaFila)->back;
-        (*fimDaFila)->next = NULL;
         *elementoRemovido = *ultimo;
         free(ultimo);
         return elementoRemovido;
@@ -206,13 +212,18 @@ int main()
     mostrarFila(&inicioDaFila, &fimDaFila, "RL");
     while (removerElementoNoInicio(&inicioDaFila, &fimDaFila))
     {
-        printf("elemento removido.\n");
+        printf("elemento removido do inicio.\n");
     }
 
     adicionarElementoNoFim(&inicioDaFila, &fimDaFila, 10);
     adicionarElementoNoFim(&inicioDaFila, &fimDaFila, 20);
     adicionarElementoNoFim(&inicioDaFila, &fimDaFila, 30);
     mostrarFila(&inicioDaFila, &fimDaFila, "crescente");
+
+    while (removerElementoNoFim(&inicioDaFila, &fimDaFila))
+    {
+        printf("elemento removido no fim.\n");
+    }
     printf("inicioDaFila: %p \n", inicioDaFila);
     printf("fimDaFila   : %p \n", fimDaFila);
 
