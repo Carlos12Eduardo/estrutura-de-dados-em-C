@@ -127,7 +127,7 @@ void adicionarElementoNoMeio(Fila **inicioDaFila, Fila **fimDaFila, int informac
     printf("valor nao localizado.\n");
 }
 
-void adicionarElementoNoInicio(Fila **inicioDaFila, int informacao)
+void adicionarElementoNoInicio(Fila **inicioDaFila, Fila **fimDaFila,int informacao)
 {
     Fila *novo = novoElemento(informacao);
     if (!novo)
@@ -137,7 +137,7 @@ void adicionarElementoNoInicio(Fila **inicioDaFila, int informacao)
     }
     if (*inicioDaFila == NULL)
     {
-        *inicioDaFila = novo;
+        *inicioDaFila = *fimDaFila = novo;
     }
     else
     {
@@ -191,7 +191,7 @@ int main()
 {
     Fila *inicioDaFila = NULL;
     Fila *fimDaFila = NULL;
-    adicionarElementoNoInicio(&inicioDaFila, 2);
+    adicionarElementoNoInicio(&inicioDaFila, &fimDaFila, 2);
     // adicionarElementoNoInicio(&inicioDaFila, 1);
     mostrarFila(&inicioDaFila, &fimDaFila, "LR");
     mostrarFila(&inicioDaFila, &fimDaFila, "RL");
