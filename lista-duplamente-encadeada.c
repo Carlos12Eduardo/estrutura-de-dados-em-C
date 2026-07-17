@@ -69,8 +69,8 @@ void mostrarFila(Fila **inicioDaFila, Fila **fimDaFila, char *sentido)
     }
     else
     {
-        printf("sentido de impressao nao reconhecido. O campo de sentido aceita os modos: \n LR - Left -> right \n RL - right -> left");
-        printf("listando com o padrao LR");
+        printf("sentido de impressao nao reconhecido. O campo de sentido aceita os modos: \n LR - Left -> right \n RL - right -> left\n");
+        printf("listando com o padrao LR\n");
         mostrarFilaSentidoLR(inicioDaFila);
     }
 }
@@ -208,8 +208,13 @@ int main()
     {
         printf("elemento removido.\n");
     }
+
+    adicionarElementoNoFim(&inicioDaFila, &fimDaFila, 10);
+    adicionarElementoNoFim(&inicioDaFila, &fimDaFila, 20);
+    adicionarElementoNoFim(&inicioDaFila, &fimDaFila, 30);
+    mostrarFila(&inicioDaFila, &fimDaFila, "crescente");
     printf("inicioDaFila: %p \n", inicioDaFila);
-    printf("fimDaFila: %p \n", fimDaFila);
+    printf("fimDaFila   : %p \n", fimDaFila);
 
     system("pause");
     return 0;
