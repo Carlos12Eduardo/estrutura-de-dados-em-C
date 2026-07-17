@@ -155,7 +155,6 @@ int main()
 {
     Fila *inicioDaFila = NULL;
     Fila *fimDaFila = NULL;
-    // inicioDaFila = novoElemento(20);
     int i = 0;
     for (i = 0; i < 10; i++)
     {
@@ -167,13 +166,6 @@ int main()
     adicionarElementoNoMeio(&inicioDaFila, &fimDaFila, 2222, 9);
     removerElementoNoInicio(&inicioDaFila);
     removerElementoNoInicio(&inicioDaFila);
-    // adicionarElementoNoFim(fimDaFila, 123);
-    // adicionarElementoNoFim(fimDaFila, 124);
-    // mostrarFila(inicioDaFila);
-    // while (removerElementoNoFim())
-    // {
-    //     printf("elemento removido\n");
-    // }
     mostrarFila(&inicioDaFila);
     removerElementoNoFim(&fimDaFila);
     removerElementoNoFim(&fimDaFila);
