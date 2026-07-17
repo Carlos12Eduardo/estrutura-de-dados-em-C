@@ -22,22 +22,8 @@ Fila *novoElemento(int informacao)
     return novo;
 }
 
-void mostrarFila(Fila **inicioDaFila, Fila **fimDaFila, char *sentido)
+void mostrarFilaSentidoLR(Fila **inicioDaFila)
 {
-
-    if (sentido == "LR")
-    {
-        printf("listando do inicio ao fim\n");
-    }
-    else if(sentido == "RL")
-    {
-        printf("listando do fim ao inicio\n");
-    }
-    else{
-        printf("sentido de impressao nao reconhecido. O campo de sentido aceita os modos: \n LR - Left -> right \n RL - right -> left");
-        printf("listando com o padrao LR");
-    }
-
     Fila *ultimo = *inicioDaFila;
     int i = 1;
     if (*inicioDaFila == NULL)
@@ -51,6 +37,25 @@ void mostrarFila(Fila **inicioDaFila, Fila **fimDaFila, char *sentido)
         ultimo = ultimo->next;
     } while (ultimo != NULL);
     printf("fim da fila.\n");
+}
+
+void mostrarFila(Fila **inicioDaFila, Fila **fimDaFila, char *sentido)
+{
+    if (sentido == "LR")
+    {
+        printf("listando do inicio ao fim\n");
+        mostrarFilaSentidoLR(inicioDaFila);
+    }
+    else if (sentido == "RL")
+    {
+        printf("listando do fim ao inicio\n");
+    }
+    else
+    {
+        printf("sentido de impressao nao reconhecido. O campo de sentido aceita os modos: \n LR - Left -> right \n RL - right -> left");
+        printf("listando com o padrao LR");
+        mostrarFilaSentidoLR(inicioDaFila);
+    }
 }
 
 void adicionarElementoNoFim(Fila **inicioDaFila, Fila **fimDaFila, int informacao)
