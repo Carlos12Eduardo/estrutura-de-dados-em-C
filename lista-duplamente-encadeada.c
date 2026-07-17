@@ -155,20 +155,8 @@ int main()
 {
     Fila *inicioDaFila = NULL;
     Fila *fimDaFila = NULL;
-    int i = 0;
-    for (i = 0; i < 10; i++)
-    {
-        adicionarElementoNoFim(&inicioDaFila, &fimDaFila, i);
-    }
-    mostrarFila(&inicioDaFila);
-    adicionarElementoNoInicio(&inicioDaFila, 20);
-    adicionarElementoNoMeio(&inicioDaFila, &fimDaFila, 1111, 5);
-    adicionarElementoNoMeio(&inicioDaFila, &fimDaFila, 2222, 9);
-    removerElementoNoInicio(&inicioDaFila);
-    removerElementoNoInicio(&inicioDaFila);
-    mostrarFila(&inicioDaFila);
-    removerElementoNoFim(&fimDaFila);
-    removerElementoNoFim(&fimDaFila);
+    adicionarElementoNoInicio(&inicioDaFila, 2);
+    adicionarElementoNoInicio(&inicioDaFila, 1);
     mostrarFila(&inicioDaFila);
     system("pause");
     return 0;
