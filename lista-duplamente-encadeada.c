@@ -142,6 +142,7 @@ void adicionarElementoNoInicio(Fila **inicioDaFila, Fila **fimDaFila,int informa
     else
     {
         novo->next = *inicioDaFila;
+        (*inicioDaFila)->back = novo;
         *inicioDaFila = novo;
     }
     printf("elemento adicionado.\n");
@@ -191,8 +192,9 @@ int main()
 {
     Fila *inicioDaFila = NULL;
     Fila *fimDaFila = NULL;
+    adicionarElementoNoInicio(&inicioDaFila, &fimDaFila, 3);
     adicionarElementoNoInicio(&inicioDaFila, &fimDaFila, 2);
-    // adicionarElementoNoInicio(&inicioDaFila, 1);
+    adicionarElementoNoInicio(&inicioDaFila, &fimDaFila, 1);
     mostrarFila(&inicioDaFila, &fimDaFila, "LR");
     mostrarFila(&inicioDaFila, &fimDaFila, "RL");
     system("pause");
