@@ -38,6 +38,22 @@ void mostrarFilaSentidoLR(Fila **inicioDaFila)
     } while (ultimo != NULL);
     printf("fim da fila.\n");
 }
+void mostrarFilaSentidoRL(Fila **fimDaFila)
+{
+    Fila *inicio = *fimDaFila;
+    int i = 1;
+    if (*fimDaFila == NULL)
+    {
+        printf("fila esta vazia.\n");
+        return;
+    }
+    do
+    {
+        printf("%d - elemento: %d \n", i++, inicio->dado);
+        inicio = inicio->back;
+    } while (inicio != NULL);
+    printf("fim da fila.\n");
+}
 
 void mostrarFila(Fila **inicioDaFila, Fila **fimDaFila, char *sentido)
 {
@@ -49,6 +65,7 @@ void mostrarFila(Fila **inicioDaFila, Fila **fimDaFila, char *sentido)
     else if (sentido == "RL")
     {
         printf("listando do fim ao inicio\n");
+        mostrarFilaSentidoRL(fimDaFila);
     }
     else
     {
@@ -175,8 +192,9 @@ int main()
     Fila *inicioDaFila = NULL;
     Fila *fimDaFila = NULL;
     adicionarElementoNoInicio(&inicioDaFila, 2);
-    adicionarElementoNoInicio(&inicioDaFila, 1);
+    // adicionarElementoNoInicio(&inicioDaFila, 1);
     mostrarFila(&inicioDaFila, &fimDaFila, "LR");
+    mostrarFila(&inicioDaFila, &fimDaFila, "RL");
     system("pause");
     return 0;
 }
