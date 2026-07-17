@@ -22,8 +22,22 @@ Fila *novoElemento(int informacao)
     return novo;
 }
 
-void mostrarFila(Fila **inicioDaFila)
+void mostrarFila(Fila **inicioDaFila, Fila **fimDaFila, char *sentido)
 {
+
+    if (sentido == "LR")
+    {
+        printf("listando do inicio ao fim\n");
+    }
+    else if(sentido == "RL")
+    {
+        printf("listando do fim ao inicio\n");
+    }
+    else{
+        printf("sentido de impressao nao reconhecido. O campo de sentido aceita os modos: \n LR - Left -> right \n RL - right -> left");
+        printf("listando com o padrao LR");
+    }
+
     Fila *ultimo = *inicioDaFila;
     int i = 1;
     if (*inicioDaFila == NULL)
@@ -157,7 +171,7 @@ int main()
     Fila *fimDaFila = NULL;
     adicionarElementoNoInicio(&inicioDaFila, 2);
     adicionarElementoNoInicio(&inicioDaFila, 1);
-    mostrarFila(&inicioDaFila);
+    mostrarFila(&inicioDaFila, &fimDaFila, "LR");
     system("pause");
     return 0;
 }
