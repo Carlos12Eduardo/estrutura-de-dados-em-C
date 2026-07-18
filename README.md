@@ -10,4 +10,4 @@ Esse repositório foi criado para armazenar os códigos de estruturas de dados a
 - [Lista circular](https://github.com/Carlos12Eduardo/estrutura-de-dados-em-C/blob/main/lista-circular-com-ponteiros.c)
 - [Busca binária](https://github.com/Carlos12Eduardo/estrutura-de-dados-em-C/blob/main/busca%20binaria.c)
 - [Preechimento de arvore binária de busca](https://github.com/Carlos12Eduardo/estrutura-de-dados-em-C/blob/main/preencherABB.c)
-- Árvore AVL  
+- [Árvore AVL](https://github.com/Carlos12Eduardo/estrutura-de-dados-em-C/blob/main/arvoreAvL.c)
