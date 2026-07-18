@@ -8,6 +8,6 @@ Esse repositório foi criado para armazenar os códigos de estruturas de dados a
 - [Lista simplesmente encadeiada](https://github.com/Carlos12Eduardo/estrutura-de-dados-em-C/blob/main/lista-simplesmente-encadeada.c)
 - [Lista duplamente encadeiada](https://github.com/Carlos12Eduardo/estrutura-de-dados-em-C/blob/main/lista-duplamente-encadeada.c)
 - [Lista circular](https://github.com/Carlos12Eduardo/estrutura-de-dados-em-C/blob/main/lista-circular-com-ponteiros.c)
-- Busca binária
+- [Busca binária](https://github.com/Carlos12Eduardo/estrutura-de-dados-em-C/blob/main/busca%20binaria.c)
 - Preechimento de arvore binária de busca
 - Árvore AVL  
