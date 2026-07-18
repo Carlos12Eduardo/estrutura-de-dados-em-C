@@ -11,3 +11,12 @@ Esse repositório foi criado para armazenar os códigos de estruturas de dados a
 - [Busca binária](https://github.com/Carlos12Eduardo/estrutura-de-dados-em-C/blob/main/busca%20binaria.c)
 - [Preechimento de arvore binária de busca](https://github.com/Carlos12Eduardo/estrutura-de-dados-em-C/blob/main/preencherABB.c)
 - [Árvore AVL](https://github.com/Carlos12Eduardo/estrutura-de-dados-em-C/blob/main/arvoreAvL.c)
+
+
+## Técnicas e tecnologias utilizadas
+- linguagem C
+- compliador gcc (tdm64-1) 4.9.2
+- programação estrutural
+- estrutura de dados
+- alocação dinâmica de memória
+- ponteiros
