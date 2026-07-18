@@ -4,7 +4,7 @@ Esse repositório foi criado para armazenar os códigos de estruturas de dados a
 
 ## Estruturas aprendidas
 - [Lista linear com array](https://github.com/Carlos12Eduardo/estrutura-de-dados-em-C/blob/main/lista-linear-com-array.cpp  )
-- Pilha com array
+- [Pilha com array](https://github.com/Carlos12Eduardo/estrutura-de-dados-em-C/blob/main/pilha-com-array.cpp)
 - Lista simplesmente encadeiada
 - Lista duplamente encadeiada
 - Lista circular
